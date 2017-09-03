@@ -22,10 +22,10 @@ def login():
     rv = cur.fetchall()
     return str(rv)
 
-    
-
 @app.route('/createEvent',  methods=['POST', 'GET'])
 def create_event():
+    usersId = 1
+
     event = {}
     event["type"] = request.form["type"] 
     event["date"] = request.form["date"] 
