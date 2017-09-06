@@ -76,8 +76,9 @@ def answer_event():
 
     cur.execute("INSERT INTO `usersEvents` (`usersId`, `eventsId`, `isAnswered`) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE isAnswered = %s", (event["usersId"], event["eventsId"], event["isAnswered"], event["isAnswered"]))
 
-
-    return jsonify(1)
+    success = {}
+    success["status"] = 1
+    return jsonify(success)
 
 
 
